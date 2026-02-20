@@ -72,8 +72,10 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
         this.add(board[0][0])
         
         initializePieces();
-        for (int i = 0; i < 0; i++){
-            for (int j = 0; )
+        for (int i = 0; i < board.length; i++){
+            for (int j = 0; j < board[0].length; j++){
+                if ((i + j) % 2)
+            }
         }
         
 
