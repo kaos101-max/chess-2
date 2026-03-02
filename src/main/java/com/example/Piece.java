@@ -62,7 +62,10 @@ public class Piece {
     //going to score any points.
     public ArrayList<Square> getLegalMoves(Board b, Square start){
         ArrayList<Square> moves = new ArrayList<>();
-        
-    	return moves;
+    	int [][] potentialmoves = {
+            {-1,-1}, {-1,0}, {-1, 1},
+            {0, -1},         {0, 1},
+            {1, -1}, {1, 0}, {1, 1}
+        };
     }
 }
