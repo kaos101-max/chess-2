@@ -62,10 +62,24 @@ public class Piece {
     //going to score any points.
     public ArrayList<Square> getLegalMoves(Board b, Square start){
         ArrayList<Square> moves = new ArrayList<>();
-    	int [][] potentialmoves = {
-            {-1,-1}, {-1,0}, {-1, 1},
-            {0, -1},         {0, 1},
-            {1, -1}, {1, 0}, {1, 1}
-        };
+
+        //the board in which you can move
+        Square [][] board = b.getSquareArray();
+
+        //each move is up (or down if we're black) one row and either left or right
+
+    	int startX = start.getCol();
+        int startY = start.getRow();
+        int leftRight = 1;
+
+        for(int i=startY-1; i>=0; i--){
+          
+        }
+        
+
+        Square move = board[startY-1][startX+1];
+        moves.add(move);
+
+        return moves;
     }
 }
