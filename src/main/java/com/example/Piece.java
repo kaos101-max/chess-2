@@ -75,9 +75,13 @@ public class Piece {
         if (color) {
             for (int i = startY - 1; i >= 0; i--) {
                 startX += leftRight;
-                if (startX + leftRight >= 8 && startX + leftRight < 0) {
-                    throw new IndexOutOfBoundsException("we're never supposed to be on the edge!");
+                if(startX >= 8){
+                    startX-=8;
                 }
+                if(startX < 0){
+                    startX+=8;
+                }
+                
                 if (!board[i][startX].isOccupied() || board[i][startX].getOccupyingPiece().getColor() != color) {
                     moves.add(board[i][startX]);
                 } else {
@@ -90,11 +94,46 @@ public class Piece {
                     leftRight = 1;
                 }
             }
+            if(start.getRow() == 0){
+                for(int c =0; c <=7; c++){
+                    if(!board[7][c].isOccupied() || board[7][c].getOccupyingPiece().getColor() != color){
+                        moves.add(board[7][c]);
+                    }
+                }
+            }
 
         }
-        Square move = board[startY - 1][startX + 1];
-        moves.add(move);
-
+      else{
+        //black pieces (move down)
+         for (int i = startY + 1; i < 8; i++) {
+                startX += leftRight;
+                if(startX >= 8){
+                    startX-=8;
+                }
+                if(startX < 0){
+                    startX+=8;
+                }
+                
+                if (!board[i][startX].isOccupied() || board[i][startX].getOccupyingPiece().getColor() != color) {
+                    moves.add(board[i][startX]);
+                } else {
+                    break;
+                }
+                if (leftRight == 1){
+                    leftRight = -1;
+                }
+                else{
+                    leftRight = 1;
+                }
+            }
+            if(start.getRow() == 7){
+                for(int c =0; c <=7; c++)){
+                    if(!board[7][c].isOccupied() || board[7][c].getOccupyingPiece().getColor() != color){
+                        moves.add(board[7][c]);
+                    }
+                }
+            }
+      }
         return moves;
     }
 }
