@@ -149,9 +149,10 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
             }
         }
     }
+    
+    @Override
     //Pre-con:
     //Post-con:
-    @Override
     public void mousePressed(MouseEvent e) {
         currX = e.getX();
         currY = e.getY();
@@ -177,6 +178,8 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
     //use the pieces "legal move" function to determine if this move is legal, then complete it by
     //moving the new piece to it's new board location. 
     @Override
+    //pre-con:
+    //post-con:
     public void mouseReleased(MouseEvent e) {
         Square endSquare = (Square) this.getComponentAt(new Point(e.getX(), e.getY()));
         for(Square[] row: board){
