@@ -150,9 +150,9 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
         }
     }
     
-    @Override
-    //Pre-con:
-    //Post-con:
+    @Override 
+    //Pre-con: The piece follows the mouse.
+    //Post-con: The mouse presses and drags the chess piece.
     public void mousePressed(MouseEvent e) {
         currX = e.getX();
         currY = e.getY();
@@ -178,8 +178,8 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
     //use the pieces "legal move" function to determine if this move is legal, then complete it by
     //moving the new piece to it's new board location. 
     @Override
-    //pre-con:
-    //post-con:
+    //Pre-con: Chess board area 8*8.
+    //Post-con: The piece will be placed on one of the 64 squares.
     public void mouseReleased(MouseEvent e) {
         Square endSquare = (Square) this.getComponentAt(new Point(e.getX(), e.getY()));
         for(Square[] row: board){

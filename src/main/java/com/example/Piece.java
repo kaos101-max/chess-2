@@ -60,8 +60,8 @@ public class Piece {
     // move to every square on the board is not
     // going to score any points.
 
-    //pre-con
-    //post-con
+    //pre-con: The piece doesn't follow the traditional rules.
+    //post-con It goes in a zigzag and to the edge of the other side.
     public ArrayList<Square> getLegalMoves(Board b, Square start) {
         ArrayList<Square> moves = new ArrayList<>();
 
@@ -74,7 +74,9 @@ public class Piece {
         int startY = start.getRow();
         int leftRight = 1;
         //The custom chess piece has its uniqueness and limitations. 
-        // It moves stiraght and goes right and left like a zigzag, and it can only be moved on the two middle rows of the board.
+        //(1) It moves stiraght and goes right and left like a zigzag
+        // (2) It gose to the other side of the board if it's near the edge
+        //(3) It can't be placed on a specific squares.
         if (color) {
             for (int i = startY - 1; i >= 0; i--) {
                 startX += leftRight;
