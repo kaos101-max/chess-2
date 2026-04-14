@@ -12,28 +12,11 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 //you will need to implement two functions in this file.
-public class Duke {
-    private final boolean color;
-    private BufferedImage img;
+public class Duke extends Piece{
+    
 
     public Duke(boolean isWhite, String img_file) {
-        this.color = isWhite;
-
-        try {
-            if (this.img == null) {
-                this.img = ImageIO.read(new File(System.getProperty("user.dir") + img_file));
-            }
-        } catch (IOException e) {
-            System.out.println("File not found: " + e.getMessage());
-        }
-    }
-
-    public boolean getColor() {
-        return color;
-    }
-
-    public Image getImage() {
-        return img;
+        super(isWhite, img_file);
     }
 
     public void draw(Graphics g, Square currentSquare) {
@@ -77,7 +60,7 @@ public class Duke {
         //(1) It moves stiraght and goes right and left like a zigzag
         // (2) It gose to the other side of the board if it's near the edge
         //(3) It can't be placed on a specific squares.
-        if (color) {
+        if (Piece.color) {
             for (int i = startY - 1; i >= 0; i--) {
                 startX += leftRight;
                 if(startX >= 8){
@@ -87,7 +70,7 @@ public class Duke {
                     startX+=8;
                 }
                 
-                if (!board[i][startX].isOccupied() || board[i][startX].getOccupyingPiece().getColor() != color) {
+                if (!board[i][startX].isOccupied() || board[i][startX].getOccupyingPiece().getColor() != Piece.color) {
                     moves.add(board[i][startX]);
                 } else {
                     break;
@@ -101,7 +84,7 @@ public class Duke {
             }
             if(start.getRow() == 0){
                 for(int c =0; c <=7; c++){
-                    if(!board[7][c].isOccupied() || board[7][c].getOccupyingPiece().getColor() != color){
+                    if(!board[7][c].isOccupied() || board[7][c].getOccupyingPiece().getColor() != Piece.color){
                         moves.add(board[7][c]);
                     }
                 }
