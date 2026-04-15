@@ -60,7 +60,7 @@ public class Duke extends Piece{
         //(1) It moves stiraght and goes right and left like a zigzag
         // (2) It gose to the other side of the board if it's near the edge
         //(3) It can't be placed on a specific squares.
-        if (Piece.color) {
+        if (getColor()) {
             for (int i = startY - 1; i >= 0; i--) {
                 startX += leftRight;
                 if(startX >= 8){
@@ -70,7 +70,7 @@ public class Duke extends Piece{
                     startX+=8;
                 }
                 
-                if (!board[i][startX].isOccupied() || board[i][startX].getOccupyingPiece().getColor() != Piece.color) {
+                if (!board[i][startX].isOccupied() || board[i][startX].getOccupyingPiece().getColor() != getColor()) {
                     moves.add(board[i][startX]);
                 } else {
                     break;
@@ -84,7 +84,7 @@ public class Duke extends Piece{
             }
             if(start.getRow() == 0){
                 for(int c =0; c <=7; c++){
-                    if(!board[7][c].isOccupied() || board[7][c].getOccupyingPiece().getColor() != Piece.color){
+                    if(!board[7][c].isOccupied() || board[7][c].getOccupyingPiece().getColor() !=  getColor()){
                         moves.add(board[7][c]);
                     }
                 }
