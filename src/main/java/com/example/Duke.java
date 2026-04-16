@@ -19,13 +19,6 @@ public class Duke extends Piece{
         super(isWhite, img_file);
     }
 
-    public void draw(Graphics g, Square currentSquare) {
-        int x = currentSquare.getX();
-        int y = currentSquare.getY();
-
-        g.drawImage(this.img, x, y, null);
-    }
-
     // TO BE IMPLEMENTED!
     // return a list of every square that is "controlled" by this piece. A square is
     // controlled
@@ -102,7 +95,7 @@ public class Duke extends Piece{
                     startX+=8;
                 }
                 
-                if (!board[i][startX].isOccupied() || board[i][startX].getOccupyingPiece().getColor() != color) {
+                if (!board[i][startX].isOccupied() || board[i][startX].getOccupyingPiece().getColor() != getColor()) {
                     moves.add(board[i][startX]);
                 } else {
                     break;
@@ -116,7 +109,7 @@ public class Duke extends Piece{
             }
             if(start.getRow() == 7){
                 for(int c = 0; c <= 7; c++){
-                    if(!board[7][c].isOccupied() || board[7][c].getOccupyingPiece().getColor() != color){
+                    if(!board[7][c].isOccupied() || board[7][c].getOccupyingPiece().getColor() != getColor()){
                         moves.add(board[7][c]);
                     }
                 }
