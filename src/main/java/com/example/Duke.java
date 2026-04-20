@@ -14,15 +14,20 @@ import javax.imageio.ImageIO;
 //you will need to implement two functions in this file.
 public class Duke extends Piece{
     
-
+    //precondition: The Duke chess piece will be in one side of the game.
+    //postcondition: The Duke chess piece will be white in color
     public Duke(boolean isWhite, String img_file) {
         super(isWhite, img_file);
     }
 
-    // TO BE IMPLEMENTED!
+    // 
+     // BE IMPLEMENTED!
     // return a list of every square that is "controlled" by this piece. A square is
     // controlled
     // if the piece capture into it legally.
+
+    //precondition: The piece will have purpose of where to move.
+    //postcondition: It'll return a movement of the piece.
     public ArrayList<Square> getControlledSquares(Square[][] board, Square start) {
         return null;
     }
