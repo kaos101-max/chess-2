@@ -44,7 +44,7 @@ public class Square extends JComponent {
         return this.color;
     }
     
-    public Duke getOccupyingPiece() {
+    public Piece getOccupyingPiece() {
         return occupyingPiece;
     }
     
@@ -68,8 +68,8 @@ public class Square extends JComponent {
         this.occupyingPiece = currPiece;
     }
     
-    public Duke removePiece() {
-        Duke p = this.occupyingPiece;
+    public Piece removePiece() {
+        Piece p = this.occupyingPiece;
         this.occupyingPiece = null;
         return p;
     }
