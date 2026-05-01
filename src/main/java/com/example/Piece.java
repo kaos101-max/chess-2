@@ -36,7 +36,7 @@ public class Piece {
     public void draw(Graphics g, Square currentSquare) {
         int x = currentSquare.getX();
         int y = currentSquare.getY();
-        g.drawImage(this.img, x, y, null);
+        g.drawImage(this.img, x, y,52,52, null);
     }
 
     // to be overriden in each subclass

@@ -35,8 +35,9 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 	private static final String RESOURCES_WQUEEN_PNG = path+"wqueen.png";
 	private static final String RESOURCES_WPAWN_PNG = path+"wpawn.png";
 	private static final String RESOURCES_BPAWN_PNG = path+"bpawn.png";
+
     private static final String RESOURCES_WDUKE_PNG = path+"Duke.png";
-    
+    private static final String RESOURCES_BDUKE_PNG = path+"Duke2.png";
 	
 	// Logical and graphical representations of board
 	private final Square[][] board;
@@ -97,8 +98,13 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 	//since we only have one kind of piece for now you need only set the same number of pieces on either side.
 	//it's up to you how you wish to arrange your pieces.
     void initializePieces() {
-    	board[0][3].put(new Duke(false, RESOURCES_BBISHOP_PNG));
+        //Knight
+        board[0][3].put(new Piece(false, RESOURCES_WKNIGHT_PNG));
+    	board[7][4].put(new Piece(true, RESOURCES_BKNIGHT_PNG));
+        //DUKE
+    	board[0][3].put(new Duke(false, RESOURCES_BDUKE_PNG));
     	board[7][4].put(new Duke(true, RESOURCES_WDUKE_PNG));
+
         
 
     }
