@@ -98,13 +98,21 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 	//since we only have one kind of piece for now you need only set the same number of pieces on either side.
 	//it's up to you how you wish to arrange your pieces.
     void initializePieces() {
+        //Rook
+        //Black Rook
+        board[1][0].put(new Piece(false, RESOURCES_WKNIGHT_PNG));
+        board[6][0].put(new Piece(false, RESOURCES_WKNIGHT_PNG));
+        //White Rook
         //Knight
-        board[0][3].put(new Piece(false, RESOURCES_WKNIGHT_PNG));
-    	board[7][4].put(new Piece(true, RESOURCES_BKNIGHT_PNG));
+        //Black Knight
+        board[1][0].put(new Piece(false, RESOURCES_BKNIGHT_PNG));
+        board[6][0].put(new Piece(false, RESOURCES_BKNIGHT_PNG));
+        //White Knight
+    	board[1][7].put(new Piece(true, RESOURCES_WKNIGHT_PNG));
+        board[6][7].put(new Piece(true, RESOURCES_WKNIGHT_PNG));
         //DUKE
     	board[0][3].put(new Duke(false, RESOURCES_BDUKE_PNG));
     	board[7][4].put(new Duke(true, RESOURCES_WDUKE_PNG));
-
         
 
     }
