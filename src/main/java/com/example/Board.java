@@ -98,18 +98,50 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 	//since we only have one kind of piece for now you need only set the same number of pieces on either side.
 	//it's up to you how you wish to arrange your pieces.
     void initializePieces() {
-        //Rook
-        //Black Rook
-        board[1][0].put(new Piece(false, RESOURCES_WKNIGHT_PNG));
-        board[6][0].put(new Piece(false, RESOURCES_WKNIGHT_PNG));
-        //White Rook
-        //Knight
-        //Black Knight
-        board[1][0].put(new Piece(false, RESOURCES_BKNIGHT_PNG));
-        board[6][0].put(new Piece(false, RESOURCES_BKNIGHT_PNG));
-        //White Knight
-    	board[1][7].put(new Piece(true, RESOURCES_WKNIGHT_PNG));
-        board[6][7].put(new Piece(true, RESOURCES_WKNIGHT_PNG));
+        //[column^][row<>]
+        //Rooks
+        //Black Rooks
+        board[0][0].put(new Piece(false, RESOURCES_BROOK_PNG));
+        board[0][7].put(new Piece(false, RESOURCES_BROOK_PNG));
+        //White Rooks
+        board[7][0].put(new Piece(true, RESOURCES_WROOK_PNG));
+        board[7][7].put(new Piece(true, RESOURCES_WROOK_PNG));
+        //Knights
+        //Black Knights
+        board[0][1].put(new Piece(false, RESOURCES_BKNIGHT_PNG));
+        board[0][6].put(new Piece(false, RESOURCES_BKNIGHT_PNG));
+        //White Knights
+    	board[7][1].put(new Piece(true, RESOURCES_WKNIGHT_PNG));
+        board[7][6].put(new Piece(true, RESOURCES_WKNIGHT_PNG));
+        //Bishops
+        //Black Bishops
+        board[0][2].put(new Piece(false, RESOURCES_BBISHOP_PNG));
+        board[0][5].put(new Piece(false, RESOURCES_BBISHOP_PNG));
+        //White Bishops
+        board[7][2].put(new Piece(true, RESOURCES_WBISHOP_PNG));
+        board[7][5].put(new Piece(true, RESOURCES_WBISHOP_PNG));
+        //Pawns
+        //Black Pawns
+        board[1][0].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][1].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][2].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][3].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][4].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][5].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][6].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][7].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        //White Pawns
+        board[6][0].put(new Piece(true, RESOURCES_WPAWN_PNG));
+        board[6][1].put(new Piece(true, RESOURCES_WPAWN_PNG));
+        board[6][2].put(new Piece(true, RESOURCES_WPAWN_PNG));
+        board[6][3].put(new Piece(true, RESOURCES_WPAWN_PNG));
+        board[6][4].put(new Piece(true, RESOURCES_WPAWN_PNG));
+        board[6][5].put(new Piece(true, RESOURCES_WPAWN_PNG));
+        board[6][6].put(new Piece(true, RESOURCES_WPAWN_PNG));
+        board[6][7].put(new Piece(true, RESOURCES_WPAWN_PNG));
+        //Black Queen and White King
+        board[0][4].put(new Piece(false, RESOURCES_BQUEEN_PNG));
+        board[7][3].put(new Piece(false, RESOURCES_WKING_PNG));
         //DUKE
     	board[0][3].put(new Duke(false, RESOURCES_BDUKE_PNG));
     	board[7][4].put(new Duke(true, RESOURCES_WDUKE_PNG));
