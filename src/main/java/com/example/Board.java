@@ -101,18 +101,18 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
         //[column^][row<>]
         //Rooks
         //Black Rooks
-        board[0][0].put(new Piece(false, RESOURCES_BROOK_PNG));
-        board[0][7].put(new Piece(false, RESOURCES_BROOK_PNG));
+        board[0][0].put(new Rook(false, RESOURCES_BROOK_PNG));
+        board[0][7].put(new Rook(false, RESOURCES_BROOK_PNG));
         //White Rooks
-        board[7][0].put(new Piece(true, RESOURCES_WROOK_PNG));
-        board[7][7].put(new Piece(true, RESOURCES_WROOK_PNG));
+        board[7][0].put(new Rook(true, RESOURCES_WROOK_PNG));
+        board[7][7].put(new Rook(true, RESOURCES_WROOK_PNG));
         //Knights
         //Black Knights
-        board[0][1].put(new Piece(false, RESOURCES_BKNIGHT_PNG));
-        board[0][6].put(new Piece(false, RESOURCES_BKNIGHT_PNG));
+        board[0][1].put(new Knight(false, RESOURCES_BKNIGHT_PNG));
+        board[0][6].put(new Knight(false, RESOURCES_BKNIGHT_PNG));
         //White Knights
-    	board[7][1].put(new Piece(true, RESOURCES_WKNIGHT_PNG));
-        board[7][6].put(new Piece(true, RESOURCES_WKNIGHT_PNG));
+    	board[7][1].put(new Knight(true, RESOURCES_WKNIGHT_PNG));
+        board[7][6].put(new Knight(true, RESOURCES_WKNIGHT_PNG));
         //Bishops
         //Black Bishops
         board[0][2].put(new Bishop(false, RESOURCES_BBISHOP_PNG));
