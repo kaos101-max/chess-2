@@ -138,7 +138,7 @@ public class Queen extends Piece {
             if(!b.getSquareArray()[row][start.getCol()].isOccupied()){
                 moves.add(b.getSquareArray()[row][start.getCol()]);
             } else {
-                if(b.getSquareArray()[row][start.getCol()].getOccupyingPiece().getColor()!= color){
+                if(b.getSquareArray()[row][start.getCol()].getOccupyingPiece().getColor()!= getColor()){
                     moves.add(b.getSquareArray()[row][start.getCol()]);
                 }
                 break;
@@ -152,7 +152,7 @@ public class Queen extends Piece {
             if(!b.getSquareArray()[row][start.getCol()].isOccupied()){
                 moves.add(b.getSquareArray()[row][start.getCol()]);
             } else {
-                if(b.getSquareArray()[row][start.getCol()].getOccupyingPiece().getColor()!= color){
+                if(b.getSquareArray()[row][start.getCol()].getOccupyingPiece().getColor()!= getColor()){
                     moves.add(b.getSquareArray()[row][start.getCol()]);
                 }
                 break;
@@ -166,7 +166,7 @@ public class Queen extends Piece {
             if(!b.getSquareArray()[start.getRow()][col].isOccupied()){
                 moves.add(b.getSquareArray()[start.getRow()][col]);
             } else {
-                if(b.getSquareArray()[start.getRow()][col].getOccupyingPiece().getColor()!= color){
+                if(b.getSquareArray()[start.getRow()][col].getOccupyingPiece().getColor()!= getColor()){
                     moves.add(b.getSquareArray()[start.getRow()][col]);
                 }
                 break;
@@ -180,7 +180,7 @@ public class Queen extends Piece {
             if(!b.getSquareArray()[start.getRow()][col].isOccupied()){
                 moves.add(b.getSquareArray()[start.getRow()][col]);
             } else {
-                if(b.getSquareArray()[start.getRow()][col].getOccupyingPiece().getColor()!= color){
+                if(b.getSquareArray()[start.getRow()][col].getOccupyingPiece().getColor()!= getColor()){
                     moves.add(b.getSquareArray()[start.getRow()][col]);
                 }
                 break;
@@ -195,7 +195,7 @@ public class Queen extends Piece {
             if(!b.getSquareArray()[row][col].isOccupied()){
                 moves.add(b.getSquareArray()[row][col]);
             } else {
-                if(b.getSquareArray()[row][col].getOccupyingPiece().getColor()!= color){
+                if(b.getSquareArray()[row][col].getOccupyingPiece().getColor()!= getColor()){
                     moves.add(b.getSquareArray()[row][col]);
                 }
                 break;
@@ -211,7 +211,7 @@ public class Queen extends Piece {
             if(!b.getSquareArray()[row][col].isOccupied()){
                 moves.add(b.getSquareArray()[row][col]);
             } else {
-                if(b.getSquareArray()[row][col].getOccupyingPiece().getColor()!= color){
+                if(b.getSquareArray()[row][col].getOccupyingPiece().getColor()!= getColor()){
                     moves.add(b.getSquareArray()[row][col]);
                 }
                 break;
@@ -227,7 +227,7 @@ public class Queen extends Piece {
             if(!b.getSquareArray()[row][col].isOccupied()){
                 moves.add(b.getSquareArray()[row][col]);
             } else {
-                if(b.getSquareArray()[row][col].getOccupyingPiece().getColor()!= color){
+                if(b.getSquareArray()[row][col].getOccupyingPiece().getColor()!= getColor()){
                     moves.add(b.getSquareArray()[row][col]);
                 }
                 break;
@@ -243,7 +243,7 @@ public class Queen extends Piece {
             if(!b.getSquareArray()[row][col].isOccupied()){
                 moves.add(b.getSquareArray()[row][col]);
             } else {
-                if(b.getSquareArray()[row][col].getOccupyingPiece().getColor()!= color){
+                if(b.getSquareArray()[row][col].getOccupyingPiece().getColor()!= getColor()){
                     moves.add(b.getSquareArray()[row][col]);
                 }
                 break;

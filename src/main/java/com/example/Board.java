@@ -242,6 +242,7 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
                 endSquare.put(currPiece);
                 fromMoveSquare.removePiece();
                 if(isInCheck(whiteTurn)){
+                    System.out.println("we're in check");
                     fromMoveSquare.put(currPiece);
                     endSquare.put(captured);
                 }
@@ -255,9 +256,22 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
         currPiece = null;
         repaint();
     }
+
+    //returns true if the king of color "color" is currently under attack (it's in a controlled square from an opponent's piece)
     private boolean isInCheck (boolean color){
-        return true;
+        //loop through the board and look at each square
+        for (int i = 0; i < board.length; i++){
+            for (int j = 0; j < board[0].length; j++){
+            }
+        }
+        //ask that square: do you have a piece? if yes, Is that piece's color != color? if yes, get that pieces's controlled squares, loop through them and ask each one
+        //do you have a "color" King? if yes we're in check, if this never happens then return false.
+        return false;
     }
+
+
+
+
     @Override
     public void mouseDragged(MouseEvent e) {
         currX = e.getX() - 24;
