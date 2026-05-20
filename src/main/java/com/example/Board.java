@@ -267,7 +267,7 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
                     //ask each enemy piece "what squares do you control?" then ask each of those squares "do you control a square that contains the "colored" king
                     ArrayList<Square> s = board[i][j].getOccupyingPiece().getControlledSquares(board, board[i][j]);
                     for (int b = 0; b < s.size(); b++){
-                        if (s.get(b)){
+                        if (s.get(b).isOccupied() && s.get(b).getOccupyingPiece()){
                             
                         }
                     }
