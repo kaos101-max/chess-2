@@ -140,8 +140,8 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
         board[6][6].put(new Pawn(true, RESOURCES_WPAWN_PNG));
         board[6][7].put(new Pawn(true, RESOURCES_WPAWN_PNG));
         //Black Queen and White King
-        board[0][4].put(new Queen(false, RESOURCES_BQUEEN_PNG));
-        board[7][3].put(new King(false, RESOURCES_WKING_PNG));
+        board[0][4].put(new King(false, RESOURCES_BKING_PNG));
+        board[7][3].put(new King(true, RESOURCES_WKING_PNG));
         //DUKE
     	board[0][3].put(new Duke(false, RESOURCES_BDUKE_PNG));
     	board[7][4].put(new Duke(true, RESOURCES_WDUKE_PNG));
@@ -202,6 +202,11 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
     public void mousePressed(MouseEvent e) {
         currX = e.getX();
         currY = e.getY();
+         for(Square[] row: board){
+            for (Square s: row){
+                s.setBorder(null);
+            }
+        }
 
         Square sq = (Square) this.getComponentAt(new Point(e.getX(), e.getY()));
 
@@ -228,15 +233,15 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
     //Post-con: The piece will be placed on one of the 64 squares.
     public void mouseReleased(MouseEvent e) {
         Square endSquare = (Square) this.getComponentAt(new Point(e.getX(), e.getY()));
-        for(Square[] row: board){
-            for (Square s: row){
-                s.setBorder(null);
-            }
-        }
+        // for(Square[] row: board){
+        //     for (Square s: row){
+        //         s.setBorder(null);
+        //     }
+        // }
     
         //using currPiece
         if (fromMoveSquare != null){
-            if (currPiece != null && currPiece.getLegalMoves(this, fromMoveSquare).contains(endSquare)){
+            if (currPiece != null && currPiece.getLegalMoves(this, fromMoveSquare).contains(endSquare) && currPiece.getColor()== whiteTurn){
             //fromMoveSquare.setDisplay(true);
                 Piece captured = endSquare.getOccupyingPiece();
                 endSquare.put(currPiece);
@@ -267,8 +272,9 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
                     //ask each enemy piece "what squares do you control?" then ask each of those squares "do you control a square that contains the "colored" king
                     ArrayList<Square> s = board[i][j].getOccupyingPiece().getControlledSquares(board, board[i][j]);
                     for (int b = 0; b < s.size(); b++){
-                        if (s.get(b).isOccupied() && s.get(b).getOccupyingPiece()){
-                            
+                        s.get(b).setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.PINK));
+                        if (s.get(b).isOccupied() && s.get(b).getOccupyingPiece() instanceof King && s.get(b).getOccupyingPiece().getColor() == color){
+                                return true;
                         }
                     }
 

@@ -29,7 +29,81 @@ public class Duke extends Piece{
     //precondition: The piece will have purpose of where to move.
     //postcondition: It'll return a movement of the piece.
     public ArrayList<Square> getControlledSquares(Square[][] board, Square start) {
-        return null;
+         ArrayList<Square> moves = new ArrayList<>();
+
+
+        // each move is up (or down if we're black) one row and either left or right
+
+        int startX = start.getCol();
+        int startY = start.getRow();
+        int leftRight = 1;
+        //The custom chess piece has its uniqueness and limitations. 
+        //(1) It moves stiraght and goes right and left like a zigzag
+        // (2) It gose to the other side of the board if it's near the edge
+        //(3) It can't be placed on a specific squares.
+        if (getColor()) {
+            for (int i = startY - 1; i >= 0; i--) {
+                startX += leftRight;
+                if(startX >= 8){
+                    startX-=8;
+                }
+                if(startX < 0){
+                    startX+=8;
+                }
+                
+                if (!board[i][startX].isOccupied() || board[i][startX].getOccupyingPiece().getColor() != getColor()) {
+                    moves.add(board[i][startX]);
+                } else {
+                    break;
+                }
+                if (leftRight == 1){
+                    leftRight = -1;
+                }
+                else{
+                    leftRight = 1;
+                }
+            }
+            if(start.getRow() == 0){
+                for(int c =0; c <=7; c++){
+                    if(!board[7][c].isOccupied() || board[7][c].getOccupyingPiece().getColor() !=  getColor()){
+                        moves.add(board[7][c]);
+                    }
+                }
+            }
+
+        }
+      else{
+        //Black pieces (move down)
+         for (int i = startY + 1; i < 8; i++) {
+                startX += leftRight;
+                if(startX >= 8){
+                    startX-=8;
+                }
+                if(startX < 0){
+                    startX+=8;
+                }
+                
+                if (!board[i][startX].isOccupied() || board[i][startX].getOccupyingPiece().getColor() != getColor()) {
+                    moves.add(board[i][startX]);
+                } else {
+                    break;
+                }
+                if (leftRight == 1){
+                    leftRight = -1;
+                }
+                else{
+                    leftRight = 1;
+                }
+            }
+            if(start.getRow() == 7){
+                for(int c = 0; c <= 7; c++){
+                    if(!board[7][c].isOccupied() || board[7][c].getOccupyingPiece().getColor() != getColor()){
+                        moves.add(board[7][c]);
+                    }
+                }
+            }
+      }
+        return moves;
     }
 
     // TO BE IMPLEMENTED!
